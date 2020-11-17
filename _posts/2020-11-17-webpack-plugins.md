@@ -47,4 +47,3 @@ class CopyrightWebpackPlugin {
 module.exports = CopyrightWebpackPlugin;
 
 ```
-
