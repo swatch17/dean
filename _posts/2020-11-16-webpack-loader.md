@@ -1,7 +1,3 @@
-<!--
- * @Author: Tan Dinbo
- * @Date: 2020-11-16 15:21:28
--->
 ---
 layout: post
 title: webpack Loader
