@@ -1,7 +1,7 @@
 <!--
  * @Author: swatch17
  * @Date: 2020-11-16 22:52:48
- * @LastEditTime: 2020-11-16 22:54:24
+ * @LastEditTime: 2020-11-17 10:45:49
 -->
 ---
 layout: post
@@ -30,5 +30,3 @@ modules:["node_modules","./loader"]
 ...
 ```
 - loader解析顺序：自下而上，自右而左
-
-详情
