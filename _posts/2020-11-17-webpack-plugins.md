@@ -1,8 +1,6 @@
 ---
 title: webpack plugins
 tags: [webpack,plugins]
-renderNumberedHeading: true
-grammar_cjkRuby: true
 date: 2020-11-17
 Author: Dean
 comments: true
@@ -47,6 +45,6 @@ class CopyrightWebpackPlugin {
 module.exports = CopyrightWebpackPlugin;
 
 ```
-  - 详情参考https://webpack.js.org/concepts/plugins/#anatomy
+  - 详情参考https://webpack.js.org/concepts/plugins
     
 	
