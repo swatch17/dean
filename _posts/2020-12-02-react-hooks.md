@@ -46,3 +46,17 @@ comments: true
 - useEffect及其特点
 	- 有两个参数：callback和dependencies数组
 	- 如果dependencies不存在，那么callback每次render都会执行
+	- 如果dependencies存在，只有当它发生了变化，callback才会执行
+
+	```
+	let _deps; 
+	function useEffect(callback,depArry){
+		const hasNoDeps = !depArray; //如果dependencies不存在
+		const hasChangeDeps = _deps?!depArray.every((el,i)=>el===_deps[i]):true;
+	//	如果dependencies不存在，或者dependencies有变化
+		if(hasNoDeps||hasChangeDeps){
+			callback();
+			_deps = depArray
+		}
+	}
+	```
