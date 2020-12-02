@@ -34,7 +34,13 @@ comments: true
 		return [_state,setSate]
 	}
 	
+	function render(){
+		ReactDOM.render(<div>{value}</div>,document.getElementById('root'))
+	}
+	
 	```
 	
 
-- useEffect
+- useEffect及其特点
+	- 有两个参数：callback和dependencies数组
+	- 如果dependencies不存在，那么callback每次render都会执行
