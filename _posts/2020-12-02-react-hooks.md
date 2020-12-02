@@ -60,3 +60,34 @@ comments: true
 		}
 	}
 	```
+	
+	# 使用数组解决Hooks的复用问题
+- 初次渲染的时候，按照useState,useEffect的顺序，把state，deps等按顺序塞到memoizedState数组中
+- 更新的时候，按照顺序，从memoizedState中把上次记录的值拿出来
+  
+  ```
+  let memoizedState = [];// hooks存放在这个数组
+  let index = 0; //当前memoizedState下标
+  
+  function useState(initialValue){
+	  memoizedState[index] = memoizedState[index]||initialValue;
+	  const currentIndex = index;
+	  function setState(newState){
+		  memoizedState[index++] = newState;
+		  render()
+	  }
+	  return [memoizedState[index++],setState]; //返回当前state,并把index加1
+  }
+  function useEffect(callback,depArray){
+	  const hasNoDeps = !depArray;
+	  const deps = memoizedState[index];
+	  const hasChangeDeps = deps?!depArray.every((el,i)=>el===deps[i]):true;
+	  if(hasNoDeps||hasChangedDeps){
+		  callback()
+		  memoizedState[index] = depArray;
+	  }
+	  index++; 
+  }
+  
+  ```
+  [参考详情](https://github.com/brickspert/blog/issues/26)
