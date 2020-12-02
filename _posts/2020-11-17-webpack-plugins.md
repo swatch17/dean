@@ -1,4 +1,5 @@
 ---
+layout: post
 title: webpack plugins
 tags: [webpack,plugins]
 date: 2020-11-17
