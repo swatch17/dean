@@ -38,6 +38,8 @@ comments: true
 		ReactDOM.render(<div>{value}</div>,document.getElementById('root'))
 	}
 	
+	
+	render()
 	```
 	
 
