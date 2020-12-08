@@ -8,8 +8,8 @@ author: Dean
 ### 判断数据类型
 
 ``` javascript
- function getType（type）{
+ function getType(type){
 	var str = Object.prototype.toString.call(type);
-	return str.slice(str.index(' ')+1,str.length-1).toLowerCase()
+	return str.slice(str.indexOf('  ')+1,str.length-1).toLowerCase()
 }
 ```
